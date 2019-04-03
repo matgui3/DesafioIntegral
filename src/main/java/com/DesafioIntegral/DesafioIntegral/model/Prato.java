@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package com.DesafioIntegral.DesafioIntegral.model;
 
 /**
  * Classe Prato, contendo os atributos e comportamentos dos objetos de tipo Prato. 
