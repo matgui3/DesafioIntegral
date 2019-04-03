@@ -1,0 +1,19 @@
+RF01. O sistema deve permitir cadastrar pratos.
+RN01. Cada prato possui um nome, uma descrição e um preço.
+RF02. O sistema deve permitir cadastrar cozinheiros.
+RN02. O cozinheiro é identificado por seu nome e suas especialidades.
+RN03. As especialidades de cada cozinheiro são a lista de pratos que o cozinheiro prepara com facilidade.
+RF03. O usuário deve poder emitir um relatório de todos os cozinheiros e suas especialidades.
+
+RNF01. O sistema deve ser WEB.
+RNF02. A interface deve ser construída com React.JS e Redux para gerenciamento do estado.
+RNF03. O uso de bibliotecas de componentes é permitido.
+RNF04. O back-end deve ser desenvolvido em Java e usando o framework Spring Boot e módulos Data JPA e Data Rest.
+RNF05. O banco de dados deve ser o PostgreSQL 9.6.
+
+
+Adicionais: 
+1) RF04. O sistema deve permitir adicionar ao prato a lista de ingredientes necessários para fazê-lo. (opcional)
+2) RF05. O sistema deve permitir gerar um relatório dos pratos que usam um determinado ingrediente. (opcional)
+3) Adicionar ao prato uma imagem.
+4) RNF06. O sistema deve autenticar e autorizar usuários utilizando Auth0.
