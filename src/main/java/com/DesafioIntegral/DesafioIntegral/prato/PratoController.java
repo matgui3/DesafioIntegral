@@ -11,6 +11,7 @@ import com.DesafioIntegral.DesafioIntegral.repositories.PratoRepository;
 @RestController
 public class PratoController {
 
+		
 	@Autowired
 	private PratoRepository pr;
 	
