@@ -33,4 +33,14 @@ public class listarPratos {
 		ps.addPrato(prato);
 	}
 	
+	@RequestMapping(value="/listarPratos/{id}", method=RequestMethod.PUT)
+	public void updatePrato(@RequestBody Prato prato, @PathVariable String id) {
+		ps.updatePrato(prato, id);
+	}
+	
+	@RequestMapping(value="/listarPratos/{id}", method=RequestMethod.DELETE)
+	public void deletePrato(@PathVariable String id) {
+		ps.deletePrato(id);
+	}
+	
 }

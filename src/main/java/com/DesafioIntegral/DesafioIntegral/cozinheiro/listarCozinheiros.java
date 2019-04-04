@@ -30,4 +30,14 @@ public class listarCozinheiros {
 		cozService.addCozinheiro(cozinheiro);
 	}
 	
+	@RequestMapping(value = "/listarCozinheiros/{id}", method = RequestMethod.PUT)
+	public void updateCozinheiro(@RequestBody Cozinheiro cozinheiro, @PathVariable String id) {
+		cozService.updateCozinheiro(cozinheiro, id);
+	}
+	
+	@RequestMapping(value = "/listarCozinheiros/{id}", method = RequestMethod.DELETE)
+	public void deleteCozinheiro(@PathVariable String id) {
+		cozService.deleteCozinheiro(id);
+	}
+	
 }

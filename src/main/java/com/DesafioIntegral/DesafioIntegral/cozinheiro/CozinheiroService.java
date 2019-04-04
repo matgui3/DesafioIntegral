@@ -30,5 +30,20 @@ public class CozinheiroService {
 	public void addCozinheiro(Cozinheiro cozinheiro) {
 		cozinheiros.add(cozinheiro);
 	}
+
+	public void updateCozinheiro(Cozinheiro cozinheiro, String id) {
+		for(int i=0; i<cozinheiros.size(); i++) {
+			Cozinheiro c = cozinheiros.get(i);
+			
+			if(c.getNome().equals(id)) {
+				cozinheiros.set(i, cozinheiro);
+				return;
+			}
+		}
+	}
+
+	public void deleteCozinheiro(String id) {
+		cozinheiros.removeIf(c -> c.getNome().equals(id));
+	}
 	
 }
