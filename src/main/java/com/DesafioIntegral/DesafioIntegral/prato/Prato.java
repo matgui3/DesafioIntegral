@@ -5,6 +5,8 @@
  */
 package com.DesafioIntegral.DesafioIntegral.prato;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,8 +21,8 @@ import javax.persistence.Table;
  */
 
 @Entity
-@Table(name="prato")
-public class Prato {
+@Table(name="Prato")
+public class Prato implements Serializable{
     
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -35,6 +37,10 @@ public class Prato {
 	@Column(name = "preco", precision = 10, scale=2, nullable=false)
     private float preco;
     
+	public Prato() {
+		super();
+	}
+	
     public Prato(String nome, String descricao, float preco){
         super();
         this.nome = nome;
@@ -46,6 +52,11 @@ public class Prato {
      * Métodos Getters e Setters dos atributos dos objetos de tipo Prato.
      */
 
+    
+    public long getId() {
+    	return this.id_prato;
+    }
+    
     public void setNome(String nome){
         this.nome = nome;
     }
