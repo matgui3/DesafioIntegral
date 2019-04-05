@@ -26,7 +26,7 @@ public class Prato implements Serializable{
     
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id_prato;
+	private Long id_prato;
 	
 	@Column(name = "nome", length = 100, nullable=false)
     private String nome;
@@ -53,8 +53,12 @@ public class Prato implements Serializable{
      */
 
     
-    public long getId() {
+    public Long getId() {
     	return this.id_prato;
+    }
+    
+    public void setId(Long id) {
+    	this.id_prato = id;
     }
     
     public void setNome(String nome){

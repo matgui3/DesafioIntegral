@@ -8,6 +8,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import ch.qos.logback.classic.Logger;
+
 @Service
 public class PratoService {
 
@@ -27,27 +29,35 @@ public class PratoService {
 		
 	}
 	
-	public Optional<Prato> getPrato(String id) {
+	public Optional<Prato> getPrato(Long id) {
 		// return pratos.stream().filter(p -> p.getNome().equals(id)).findFirst().get();
 		
 		return pr.findById(id);
 	}
 	
-	public void addPrato(Prato prato) {
+	public Prato addPrato(Prato prato) {
 		
-		pr.save(prato); // Adiciona um prato no banco de dados.
+		return pr.save(prato); // Adiciona um prato no banco de dados.
 		
 	}
 	
-	public void updatePrato(Prato prato, long id) {
-		
-		pr.save(prato);
-		
+	public Prato updatePrato(Prato prato, Long id) {		
+		Prato p = pr.findById(id).get();
+		p = prato;
+		p.setId(id);
+		return pr.save(p); // Retorna o elemento que foi salvo.
 	}
 
-	public void deletePrato(String id) {
+	public boolean deletePrato(Long id) {
 		
-		pr.deleteById(id);
+		boolean prato_existe = pr.existsById(id);
+		
+		if(prato_existe) {
+			pr.deleteById(id);
+			return true;
+		} else {
+			return false;
+		}		
 		
 	}
 	
