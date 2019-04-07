@@ -63,7 +63,7 @@ public class CozinheiroController {
 		}
 	}
 	
-	@RequestMapping(value = "/Cozinheiros/addPrato/{id_cozinheiro}/{id_prato}", method = RequestMethod.POST)
+	@RequestMapping(value = "/Cozinheiros/addEspecialidade/{id_cozinheiro}/{id_prato}", method = RequestMethod.POST)
 	public Object addEspecialidade(@PathVariable long id_cozinheiro, @PathVariable long id_prato){
 		
 		Cozinheiro c = cozService.addEspecialidade(id_cozinheiro, id_prato);
