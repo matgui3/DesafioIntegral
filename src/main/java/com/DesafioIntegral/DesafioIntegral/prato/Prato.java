@@ -29,6 +29,11 @@ import com.DesafioIntegral.DesafioIntegral.cozinheiro.Cozinheiro;
 @Table(name="Prato")
 public class Prato implements Serializable{
     
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3448583533862803029L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id_prato;
@@ -48,7 +53,7 @@ public class Prato implements Serializable{
 	public Prato() {
 		super();
 	}
-	
+		
     public Prato(String nome, String descricao, float preco){
         super();
         this.nome = nome;
@@ -60,6 +65,10 @@ public class Prato implements Serializable{
      * Métodos Getters e Setters dos atributos dos objetos de tipo Prato.
      */
 
+    
+    public void deleteAllCozinheiros() {
+    	cozinheirosQuePreparam.clear();
+    }
     
     public Long getId() {
     	return this.id_prato;
