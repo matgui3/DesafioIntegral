@@ -37,7 +37,7 @@ public class PratoService {
 	
 	public Prato addPrato(Prato prato) {
 		
-		return pr.save(prato); // Adiciona um prato no banco de dados.
+		return pr.save(prato); // Adiciona um prato no banco de dados e retorna o objeto que foi adicionado.
 		
 	}
 	

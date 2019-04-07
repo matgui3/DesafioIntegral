@@ -6,13 +6,18 @@
 package com.DesafioIntegral.DesafioIntegral.prato;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+
+import com.DesafioIntegral.DesafioIntegral.cozinheiro.Cozinheiro;
 
 /**
  * Classe Prato, contendo os atributos e comportamentos dos objetos de tipo Prato. 
@@ -25,7 +30,7 @@ import javax.persistence.Table;
 public class Prato implements Serializable{
     
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id_prato;
 	
 	@Column(name = "nome", length = 100, nullable=false)
@@ -36,6 +41,9 @@ public class Prato implements Serializable{
 	
 	@Column(name = "preco", precision = 10, scale=2, nullable=false)
     private float preco;
+	
+	@ManyToMany(mappedBy="especialidades") // mappedBy precisa ter o nome da coleção onde foi mapeada a relação.
+	private List<Cozinheiro> cozinheirosQuePreparam = new ArrayList<>();
     
 	public Prato() {
 		super();
