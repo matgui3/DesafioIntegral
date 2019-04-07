@@ -61,6 +61,10 @@ public class Cozinheiro implements Serializable {
 	public void addEspecialidade(Prato prato) {
 		especialidades.add(prato);
 	}
+	
+	public void removeAllEspecialidades() {
+		especialidades.clear();
+	}
 
 	public List<Prato> getEspecialidades() {
 		return especialidades;

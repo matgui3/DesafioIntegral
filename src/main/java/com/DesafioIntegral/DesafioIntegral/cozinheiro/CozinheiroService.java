@@ -61,6 +61,9 @@ public class CozinheiroService {
 		boolean coz_existe = cr.existsById(id);
 
 		if (coz_existe) {
+			Cozinheiro c = cr.findById(id).get();
+			c.removeAllEspecialidades();
+			cr.save(c);
 			cr.deleteById(id);
 			return true;
 		} else {
